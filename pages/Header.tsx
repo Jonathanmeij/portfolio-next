@@ -1,11 +1,23 @@
 import Button from "@/components/ui/Button";
 import Container from "@/components/ui/Container";
+import { useInView } from "react-intersection-observer";
 
 export default function Header() {
+    const { ref, inView, entry } = useInView({
+        threshold: 0,
+    });
+
     return (
-        <div className="w-full pt-20 h-[45rem] bg-gradient-radial from-gray-800 to-gray-900 border-b border-gray-800 rounded-br-[7rem]">
+        <div
+            ref={ref}
+            className="w-full pt-20 h-[45rem] bg-gradient-radial from-gray-800 to-gray-900 border-b border-gray-800 rounded-br-[7rem]"
+        >
             <Container className="flex flex-col items-center justify-center w-full h-full gap-8 m-auto">
-                <h1 className="flex flex-col items-center gap-3">
+                <h1
+                    className={`flex flex-col items-center gap-3 transition ease-in-out delay-100 duration-1000 ${
+                        inView ? "opacity-100" : "opacity-0"
+                    }`}
+                >
                     <span className="text-2xl font-medium tracking-wide">Hey, I am</span>
                     <span className="text-5xl font-bold tracking-wide text-blue-500">
                         {"< Jonathan />"}
@@ -14,7 +26,11 @@ export default function Header() {
                         {"{ Web Developer }"}
                     </span>
                 </h1>
-                <div className="flex gap-3">
+                <div
+                    className={`flex gap-3 transition ease-in-out duration-1000 delay-500 ${
+                        inView ? "opacity-100" : "opacity-0"
+                    }`}
+                >
                     <Button color="primary">Projects</Button>
                     <Button color="secondaryLigher">Contact</Button>
                 </div>

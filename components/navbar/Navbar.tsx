@@ -14,7 +14,7 @@ export default function Navbar() {
     // };
 
     return (
-        <nav className="fixed w-full">
+        <nav className="fixed z-20 w-full">
             <div className="flex items-center justify-center w-full h-20 bg-gray-900 bg-opacity-80 backdrop-blur-sm">
                 <Container className="flex justify-between w-full">
                     <h1 className="text-2xl font-bold">Jonathan</h1>
