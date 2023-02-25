@@ -1,5 +1,9 @@
 import Container from "@/components/ui/Container";
+import Divider from "@/components/ui/Divider";
 import Head from "next/head";
+import Header from "./Header";
+import AboutSection from "./AboutSection";
+import ProjectsSection from "./ProjectsSection";
 
 export default function Home() {
     return (
@@ -10,11 +14,11 @@ export default function Home() {
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <main>
-                <Container className="m-auto">
-                    <h1 className="">Jonathan</h1>
-                    <h2>Web developer</h2>
-                </Container>
+            <main className="bg-gray-900">
+                <Header />
+                {/* <Divider /> */}
+                <AboutSection />
+                <ProjectsSection />
             </main>
         </>
     );
