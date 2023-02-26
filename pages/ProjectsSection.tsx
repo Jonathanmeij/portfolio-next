@@ -3,6 +3,7 @@ import Card from "@/components/ui/Card";
 import Container from "@/components/ui/Container";
 import Divider from "@/components/ui/Divider";
 import Image from "next/image";
+import { useInView } from "react-intersection-observer";
 
 const projects = [
     {
@@ -32,13 +33,29 @@ const projects = [
 ];
 
 export default function ProjectsSection() {
+    const { ref, inView } = useInView({
+        threshold: 0.3,
+        triggerOnce: true,
+    });
+
     return (
         <div className="bg-gradient-radial from-gray-850  to-gray-900 border-b border-t border-gray-850 rounded-bl-[7rem] rounded-tr-[7rem] min-h-[30rem]">
             <Container className="m-auto my-14">
-                <h2 className="grid mb-8 text-3xl font-semibold">Projects</h2>
+                <h2
+                    ref={ref}
+                    className={`mb-8 text-3xl font-semibold transition ease-in-out  duration-500 ${
+                        inView ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10"
+                    }`}
+                >
+                    Projects
+                </h2>
                 <div className="grid w-full grid-cols-1 gap-8 md:grid-cols-2">
                     {projects.map((project) => (
-                        <Card key={project.title} hasAnimation>
+                        <Card
+                            key={project.title}
+                            className="transition duration-200 ease-in-out cursor-pointer hover:scale-[1.04]"
+                            hasAnimation
+                        >
                             <Image
                                 src={require(`../public/images/${project.image}`)}
                                 alt={project.title}
@@ -48,9 +65,12 @@ export default function ProjectsSection() {
                                 <h3 className="mb-2 text-lg font-semibold">
                                     {project.title}
                                 </h3>
-                                <p className="font-light tracking-wide text-gray-300 text-md">
+                                <p className="pb-2 font-light tracking-wide text-gray-300 text-md">
                                     {project.description}
                                 </p>
+                                <a className="text-blue-400 cursor-pointer hover:underline ">
+                                    show more <span>&rarr;</span>
+                                </a>
                             </Box>
                         </Card>
                     ))}
