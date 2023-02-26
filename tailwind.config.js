@@ -15,9 +15,13 @@ module.exports = {
             },
             colors: {
                 primary: "blue-700",
+                "gray-850": "#28384E",
             },
             backgroundImage: {
                 "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
+            },
+            gridTemplateColumns: {
+                fluid: "repeat(auto-fit, minmax(15rem, 1fr))",
             },
         },
     },
