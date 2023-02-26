@@ -4,6 +4,7 @@ import Head from "next/head";
 import Header from "./Header";
 import AboutSection from "./AboutSection";
 import ProjectsSection from "./ProjectsSection";
+import Contact from "./Contact";
 
 export default function Home() {
     return (
@@ -19,6 +20,7 @@ export default function Home() {
                 {/* <Divider /> */}
                 <AboutSection />
                 <ProjectsSection />
+                <Contact />
             </main>
         </>
     );
