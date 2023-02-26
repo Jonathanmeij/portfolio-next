@@ -1,4 +1,5 @@
 import Navbar from "@/components/navbar/Navbar";
+import Footer from "./Footer";
 // import { Inter } from "next/font/google";
 
 // const inter = Inter({
@@ -11,6 +12,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <>
             <Navbar />
             <main>{children}</main>
+            <Footer />
         </>
     );
 }

@@ -5,12 +5,13 @@ import { useInView } from "react-intersection-observer";
 export default function Header() {
     const { ref, inView, entry } = useInView({
         threshold: 0,
+        triggerOnce: true,
     });
 
     return (
         <div
             ref={ref}
-            className="w-full pt-20 h-[45rem] bg-gradient-radial from-gray-850 to-gray-900 border-b border-gray-850 rounded-br-[7rem]"
+            className="w-full pt-20 h-[45rem] bg-gradient-radial from-gray-850 to-gray-900 border-b border-gray-850 rounded-bl-[7rem]"
         >
             <Container className="flex flex-col items-center justify-center w-full h-full gap-8 m-auto">
                 <h1
