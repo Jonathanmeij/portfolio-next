@@ -4,17 +4,18 @@ import ImageKite from "../public/kite.jpg";
 import { useInView } from "react-intersection-observer";
 
 export default function AboutSection() {
-    const { ref, inView, entry } = useInView({
+    const { ref, inView } = useInView({
         /* Optional options */
-        threshold: 0.7,
+        threshold: 0.5,
+        triggerOnce: true,
     });
 
     return (
         <div className="">
-            <Container className="flex flex-col-reverse items-center justify-center h-full gap-10 m-auto my-32 md:flex-row ">
+            <Container className="flex flex-col-reverse items-center justify-center h-full max-w-4xl gap-10 m-auto my-28 md:flex-row ">
                 <div className="" ref={ref}>
                     <h2
-                        className={`text-2xl font-semibold transition ease-in-out delay-100 duration-500 ${
+                        className={`text-3xl font-semibold transition ease-in-out delay-100 duration-500 ${
                             inView
                                 ? "opacity-100 translate-x-0"
                                 : "opacity-0 -translate-x-10"
@@ -74,6 +75,7 @@ function ImageContainer() {
     const { ref, inView, entry } = useInView({
         /* Optional options */
         threshold: 0.7,
+        triggerOnce: true,
     });
 
     return (
