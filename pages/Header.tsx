@@ -10,7 +10,7 @@ export default function Header() {
     return (
         <div
             ref={ref}
-            className="w-full pt-20 h-[45rem] bg-gradient-radial from-gray-800 to-gray-900 border-b border-gray-800 rounded-br-[7rem]"
+            className="w-full pt-20 h-[45rem] bg-gradient-radial from-gray-850 to-gray-900 border-b border-gray-850 rounded-br-[7rem]"
         >
             <Container className="flex flex-col items-center justify-center w-full h-full gap-8 m-auto">
                 <h1
@@ -18,11 +18,13 @@ export default function Header() {
                         inView ? "opacity-100" : "opacity-0"
                     }`}
                 >
-                    <span className="text-2xl font-medium tracking-wide">Hey, I am</span>
-                    <span className="text-5xl font-bold tracking-wide text-blue-500">
+                    <span className="text-2xl tracking-wide text-blue-500">
+                        Hey, I am
+                    </span>
+                    <span className="text-5xl font-bold tracking-wide ">
                         {"< Jonathan />"}
                     </span>
-                    <span className="text-2xl font-semibold tracking-wide">
+                    <span className="text-3xl font-semibold tracking-wide">
                         {"{ Web Developer }"}
                     </span>
                 </h1>

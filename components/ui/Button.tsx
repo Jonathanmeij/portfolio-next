@@ -1,12 +1,14 @@
 import { cva, VariantProps } from "class-variance-authority";
 
-const buttonStyles = cva("rounded-lg font-medium text-center border-1", {
+const buttonStyles = cva("rounded-lg font-medium text-center ", {
     variants: {
         color: {
-            primary: " bg-blue-600 text-white border-0  hover:bg-blue-700",
-            secondary: " bg-gray-800 text-white border-gray-700 hover:bg-gray-700 ",
-            secondaryLigher: " bg-gray-700 text-white border-gray-700 hover:bg-gray-600 ",
-            none: "bg-transparent hover:bg-gray-900 border-0",
+            primary: " bg-blue-600 text-white hover:bg-blue-700 border border-blue-500",
+            secondary:
+                " bg-gray-800 text-white border border-gray-700 hover:bg-gray-700 ",
+            secondaryLigher:
+                " bg-gray-700 text-white  hover:bg-gray-600 border  border-gray-600 ",
+            none: "bg-transparent hover:bg-gray-800 ",
             danger: " bg-red-600 text-white hover:bg-red-700 border-red-500",
         },
         padding: {
