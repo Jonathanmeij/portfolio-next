@@ -1,6 +1,6 @@
 import Container from "@/components/ui/Container";
 import Image from "next/image";
-import ImageKite from "../public/kite.jpg";
+import ImageKite from "../public/images/kite.jpg";
 import { useInView } from "react-intersection-observer";
 
 export default function AboutSection() {
