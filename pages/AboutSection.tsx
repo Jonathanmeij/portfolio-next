@@ -12,7 +12,7 @@ export default function AboutSection() {
 
     return (
         <div className="">
-            <Container className="flex flex-col-reverse items-center justify-center h-full max-w-4xl gap-10 m-auto my-28 md:flex-row ">
+            <Container className="flex flex-col-reverse items-center justify-center h-full gap-10 m-auto my-28 md:flex-row ">
                 <div className="" ref={ref}>
                     <h2
                         className={`text-3xl font-semibold transition ease-in-out delay-100 duration-500 ${
@@ -87,7 +87,11 @@ function ImageContainer() {
             }
         `}
         >
-            <Image src={ImageKite} alt="Me Kite surfing" />
+            <Image
+                src={ImageKite}
+                alt="Me Kite surfing"
+                className="object-cover h-full"
+            />
         </div>
     );
 }
