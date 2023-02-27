@@ -14,14 +14,14 @@ export default function Contact() {
                 <form className="flex flex-col gap-4">
                     <div>
                         <label
-                            htmlFor="email-address-icon"
+                            htmlFor="name"
                             className="block mb-2 text-sm font-medium text-white"
                         >
                             Name
                         </label>
                         <input
                             type="text"
-                            id="email-address-icon"
+                            id="name"
                             className=" text-sm rounded-lg border border-gray-850 block w-full p-2.5 bg-gray-800  placeholder-gray-400 text-white focus:border-blue-500"
                             placeholder="name"
                         />
