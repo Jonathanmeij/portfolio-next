@@ -140,7 +140,7 @@ function MobileMenuButton() {
 
 function MenuItems() {
     return (
-        <Container className="flex flex-col w-full gap-8 rounded-xl">
+        <Container className="flex flex-col w-full gap-8 text-2xl rounded-xl">
             <TransitionChild delay={"delay-0"}>
                 <Menu.Item>{({ active }) => <Button fullWidth>About</Button>}</Menu.Item>
             </TransitionChild>
