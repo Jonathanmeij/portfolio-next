@@ -60,6 +60,7 @@ export default function Navbar() {
                     </Container>
                     <MobileMenuButton />
                 </div>
+                <Divider />
             </nav>
         </>
     );
