@@ -15,7 +15,7 @@ export default function AboutSection() {
             <Container className="flex flex-col-reverse items-center justify-center h-full gap-10 m-auto my-28 md:flex-row ">
                 <div className="" ref={ref}>
                     <h2
-                        className={`text-3xl font-semibold transition ease-in-out delay-100 duration-500 ${
+                        className={`text-3xl font-semibold transition ease-in-out duration-500 ${
                             inView
                                 ? "opacity-100 translate-x-0"
                                 : "opacity-0 -translate-x-10"
@@ -24,7 +24,7 @@ export default function AboutSection() {
                         About me
                     </h2>
                     <div
-                        className={` transition  delay-200 ease-in-out duration-500 ${
+                        className={` transition  delay-100 ease-in-out duration-500 ${
                             inView
                                 ? "opacity-100 translate-x-0"
                                 : "opacity-0 -translate-x-10"
