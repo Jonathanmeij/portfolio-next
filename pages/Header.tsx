@@ -11,7 +11,7 @@ export default function Header() {
     return (
         <div
             ref={ref}
-            className="w-full pt-20 h-[45rem] bg-gradient-radial from-gray-850 to-gray-900 border-b border-gray-850 rounded-bl-[7rem]"
+            className=" w-full pt-20 h-[45rem] bg-gradient-radial from-gray-850 to-gray-900 border-b border-gray-850 rounded-bl-[7rem]"
         >
             <Container className="flex flex-col items-center justify-center w-full h-full gap-8 m-auto">
                 <h1
@@ -22,10 +22,10 @@ export default function Header() {
                     <span className="text-2xl tracking-wide text-blue-500">
                         Hey, I am
                     </span>
-                    <span className="text-5xl font-bold tracking-wide ">
+                    <span className="text-4xl font-bold tracking-wide md:text-5xl">
                         {"< Jonathan />"}
                     </span>
-                    <span className="text-3xl font-semibold tracking-wide">
+                    <span className="text-2xl font-semibold tracking-wide md:text-4xl">
                         {"{ Web Developer }"}
                     </span>
                 </h1>
