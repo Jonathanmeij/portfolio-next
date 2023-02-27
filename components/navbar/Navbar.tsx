@@ -66,72 +66,57 @@ export default function Navbar() {
 
 function MobileMenuButton() {
     const genericHamburgerLine = `h-[2px] w-8 my-1 rounded-full bg-white transition ease transform duration-300`;
-    const [isOpen, setIsOpen] = useState(false);
 
     return (
         <Menu>
-            <Menu.Button
-                onClickCapture={() => setIsOpen(!isOpen)}
-                className="z-20 flex flex-col items-center justify-center w-12 h-12 mr-6 rounded md:hidden group"
-            >
+            {({ open }) => (
                 <>
-                    <div
-                        className={`${genericHamburgerLine} ${
-                            isOpen ? "rotate-45 translate-y-[10px] " : "opacity-100 "
-                        }`}
-                    />
-                    <div
-                        className={`${genericHamburgerLine} ${isOpen ? "opacity-0" : ""}`}
-                    />
-                    <div
-                        className={`${genericHamburgerLine} ${
-                            isOpen
-                                ? "-rotate-45 -translate-y-[10px] opacity-100"
-                                : "opacity-100 "
-                        }`}
-                    />
+                    <Menu.Button className="z-20 flex flex-col items-center justify-center w-12 h-12 mr-6 rounded md:hidden group">
+                        <>
+                            <div
+                                className={`${genericHamburgerLine} ${
+                                    open
+                                        ? "rotate-45 translate-y-[10px] "
+                                        : "opacity-100 "
+                                }`}
+                            />
+                            <div
+                                className={`${genericHamburgerLine} ${
+                                    open ? "opacity-0" : ""
+                                }`}
+                            />
+                            <div
+                                className={`${genericHamburgerLine} ${
+                                    open
+                                        ? "-rotate-45 -translate-y-[10px] opacity-100"
+                                        : "opacity-100 "
+                                }`}
+                            />
+                        </>
+                    </Menu.Button>
+                    <Menu.Items className="absolute top-0 right-0 w-full translate-y-20 h-max backdrop-blur">
+                        <Divider />
+                        <div className="z-40 w-full py-16 bg-gray-900 opacity-80">
+                            <MenuItems />
+                        </div>
+                    </Menu.Items>
                 </>
-            </Menu.Button>
-            <Menu.Items className="absolute top-0 right-0 w-full h-full translate-y-20 ">
-                <Divider />
-                <div className="z-40 w-full py-16 bg-gray-900 backdrop-blur">
-                    <MenuItems setIsOpen={setIsOpen} />
-                </div>
-            </Menu.Items>
+            )}
         </Menu>
     );
 }
 
-function MenuItems({ setIsOpen }: { setIsOpen: (isOpen: boolean) => void }) {
-    const close = () => setIsOpen(false);
+function MenuItems() {
     return (
         <Container className="flex flex-col w-full gap-8 ">
-            <Menu.Item>
-                {({ active }) => (
-                    <Button onClick={close} fullWidth>
-                        About
-                    </Button>
-                )}
-            </Menu.Item>
-            <Menu.Item>
-                {({ active }) => (
-                    <Button onClick={close} fullWidth>
-                        Projects
-                    </Button>
-                )}
-            </Menu.Item>
-            <Menu.Item>
-                {({ active }) => (
-                    <Button onClick={close} color="secondary" fullWidth>
-                        Contact
-                    </Button>
-                )}
-            </Menu.Item>
+            <Menu.Item>{({ active }) => <Button fullWidth>About</Button>}</Menu.Item>
+            <Menu.Item>{({ active }) => <Button fullWidth>Projects</Button>}</Menu.Item>
+            <Menu.Item>{({ active }) => <Button fullWidth>Contact</Button>}</Menu.Item>
             <div className="flex items-center m-auto">
                 <Menu.Item>
                     {({ active }) => (
                         <a target="_blank" href="https://github.com/Jonathanmeij">
-                            <Button onClick={close}>
+                            <Button>
                                 <Image
                                     className="text-white "
                                     src={GithubIcon}
@@ -147,7 +132,7 @@ function MenuItems({ setIsOpen }: { setIsOpen: (isOpen: boolean) => void }) {
                             target="_blank"
                             href="https://www.linkedin.com/in/jonathan-van-der-meij-539452252/"
                         >
-                            <Button onClick={close}>
+                            <Button>
                                 <Image src={LinkedInIcon} alt="LinkedIn" />
                             </Button>
                         </a>
