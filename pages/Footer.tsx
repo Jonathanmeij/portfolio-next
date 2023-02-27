@@ -49,7 +49,7 @@ export default function Footer() {
             </div>
             <div className="bg-gray-900 ">
                 <Container maxWidth="7xl" className="flex justify-center w-full m-auto">
-                    <p className="py-8 text-gray-600 ">
+                    <p className="py-8 text-gray-400 ">
                         © 2023 Jonathan van der Meij. All rights reserved.
                     </p>
                 </Container>
