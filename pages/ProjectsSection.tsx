@@ -7,24 +7,28 @@ import { useInView } from "react-intersection-observer";
 
 const projects = [
     {
+        id: 1,
         title: "Workout Tracker",
         description: "A workout tracker app for mobile devices.",
         image: "workout-tracker.jpg",
         link: "/projects/workout-tracker",
     },
     {
+        id: 2,
         title: "Coming soon",
         description: "Lorum ipsum dolor sit amet. Lorum ipsum dolor sit amet.",
         image: "coming-soon.jpg",
         link: "/projects/coming-soon",
     },
     {
+        id: 3,
         title: "Coming soon",
         description: "Lorum ipsum dolor sit amet. Lorum ipsum dolor sit amet.",
         image: "coming-soon.jpg",
         link: "/projects/coming-soon",
     },
     {
+        id: 4,
         title: "Coming soon",
         description: "Lorum ipsum dolor sit amet. Lorum ipsum dolor sit amet.",
         image: "coming-soon.jpg",
@@ -39,11 +43,14 @@ export default function ProjectsSection() {
     });
 
     return (
-        <div className="bg-gradient-radial from-gray-850  to-gray-900 border-b border-t border-gray-850 rounded-bl-[7rem] rounded-tr-[7rem] min-h-[30rem]">
+        <section
+            id="projects"
+            className="bg-gradient-radial scroll-m-16 from-gray-850  to-gray-900 border-b border-t border-gray-850 rounded-bl-[7rem] rounded-tr-[7rem] min-h-[30rem]"
+        >
             <Container className="m-auto my-14">
                 <h2
                     ref={ref}
-                    className={`mb-8 text-3xl font-semibold transition ease-in-out  duration-500 ${
+                    className={`mb-8 text-3xl font-semibold transition ease-in-out  duration-500 -scroll-mt-3.5 ${
                         inView ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10"
                     }`}
                 >
@@ -52,7 +59,7 @@ export default function ProjectsSection() {
                 <div className="grid w-full grid-cols-1 gap-8 md:grid-cols-2">
                     {projects.map((project) => (
                         <Card
-                            key={project.title}
+                            key={project.id}
                             className="transition duration-200 ease-in-out cursor-pointer hover:scale-[1.04]"
                             hasAnimation
                         >
@@ -76,6 +83,6 @@ export default function ProjectsSection() {
                     ))}
                 </div>
             </Container>
-        </div>
+        </section>
     );
 }

@@ -4,17 +4,27 @@ import GithubIcon from "../../public/iconmonstr-github.svg";
 import LinkedInIcon from "../../public/iconmonstr-linkedin.svg";
 import Image from "next/image";
 import Divider from "../ui/Divider";
-import { useState } from "react";
 import { Menu, Transition } from "@headlessui/react";
 import { AnimatePresence, motion } from "framer-motion";
+import { useRouter } from "next/router";
+import Link from "next/link";
+
+const handleScroll = (element: any, block: string) => {
+    if (element) {
+        element.scrollIntoView({ behavior: "smooth", block: block });
+    }
+};
+
+if (typeof window !== "undefined") {
+    var contactSection = document.getElementById("contact");
+    var projectsSection = document.getElementById("projects");
+    var aboutSection = document.getElementById("about");
+    var homeSection = document.getElementById("home");
+}
 
 export default function Navbar() {
-    // const handleScroll = () => {
-    //     // const ding
-    //     if (element) {
-    //         element.scrollIntoView({ behavior: 'smooth' });
-    //       }
-    // };
+    const router = useRouter();
+    const isHome = router.pathname === "/";
 
     return (
         <>
@@ -24,16 +34,39 @@ export default function Navbar() {
                         maxWidth="7xl"
                         className="flex items-center justify-between w-full"
                     >
-                        <h1 className="text-2xl font-bold">Jonathan</h1>
+                        <h1 className="text-2xl font-bold">
+                            <Button
+                                padding="none"
+                                color="noneNoHover"
+                                font="bold"
+                                to={isHome ? undefined : "/"}
+                                onClick={() => handleScroll(homeSection, "start")}
+                            >
+                                Jonathan
+                            </Button>
+                        </h1>
                         <ul className="items-center hidden gap-4 font-medium md:flex">
                             <li>
-                                <Button>About</Button>
+                                <Button
+                                    onClick={() => handleScroll(aboutSection, "center")}
+                                >
+                                    About
+                                </Button>
                             </li>
                             <li>
-                                <Button>Projects</Button>
+                                <Button
+                                    onClick={() => handleScroll(projectsSection, "start")}
+                                >
+                                    Projects
+                                </Button>
                             </li>
                             <li>
-                                <Button color="secondary">Contact</Button>
+                                <Button
+                                    onClick={() => handleScroll(contactSection, "center")}
+                                    color="secondary"
+                                >
+                                    Contact
+                                </Button>
                             </li>
                             <li>
                                 <a target="_blank" href="https://github.com/Jonathanmeij">
@@ -118,10 +151,10 @@ function MobileMenuButton() {
                             </>
                         </Menu.Button>
                         <Transition
-                            enter="transition ease-out duration-300"
+                            enter="transition ease-out duration-200"
                             enterFrom="opacity-0"
                             enterTo="opacity-100"
-                            leave="transition ease-in duration-200"
+                            leave="transition ease-in duration-150"
                             leaveFrom="opacity-100"
                             leaveTo="opacity-0"
                         >
@@ -142,20 +175,20 @@ function MobileMenuButton() {
 function MenuItems() {
     return (
         <Container className="flex flex-col w-full gap-8 text-2xl rounded-xl">
-            <TransitionChild delay={"delay-0"}>
+            <TransitionChild delay={"delay-0"} leaveDelay={"delay-[150ms]"}>
                 <Menu.Item>{({ active }) => <Button fullWidth>About</Button>}</Menu.Item>
             </TransitionChild>
-            <TransitionChild delay={"delay-[50ms]"}>
+            <TransitionChild delay={"delay-[50ms]"} leaveDelay={"delay-[100ms]"}>
                 <Menu.Item>
                     {({ active }) => <Button fullWidth>Projects</Button>}
                 </Menu.Item>
             </TransitionChild>
-            <TransitionChild delay={"delay-[100ms]"}>
+            <TransitionChild delay={"delay-[100ms]"} leaveDelay={"delay-[50ms]"}>
                 <Menu.Item>
                     {({ active }) => <Button fullWidth>Contact</Button>}
                 </Menu.Item>
             </TransitionChild>
-            <TransitionChild delay={"delay-[150ms]"}>
+            <TransitionChild delay={"delay-[150ms]"} leaveDelay={"delay-0"}>
                 <div className="flex items-center m-auto">
                     <Menu.Item>
                         {({ active }) => (
@@ -191,18 +224,20 @@ function MenuItems() {
 function TransitionChild({
     children,
     delay,
+    leaveDelay,
 }: {
     children: React.ReactNode;
     delay: string;
+    leaveDelay: string;
 }) {
     return (
         <Transition.Child
             enter={`transition ease-out duration-200 transform ${delay}`}
             enterFrom="-translate-x-10 opacity-0"
             enterTo="translate-x-0"
-            leave="transition ease-in-out duration-200 transform"
+            leave={`transition ease-in duration-200 transform ${leaveDelay}`}
             leaveFrom="translate-x-0"
-            leaveTo="-translate-x-10"
+            leaveTo="translate-x-10 opacity-0"
             className={"m-auto"}
         >
             {children}

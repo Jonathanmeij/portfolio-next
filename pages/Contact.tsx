@@ -3,7 +3,7 @@ import Container from "@/components/ui/Container";
 
 export default function Contact() {
     return (
-        <div className="my-28">
+        <section id="contact" className="py-28">
             <Container maxWidth="xl" className="flex flex-col gap-8 m-auto">
                 <div>
                     <h2 className="mb-1 text-3xl font-semibold">Contact me</h2>
@@ -74,6 +74,6 @@ export default function Contact() {
                     <Button color="primary">Send</Button>
                 </form>
             </Container>
-        </div>
+        </section>
     );
 }

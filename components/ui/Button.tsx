@@ -1,6 +1,7 @@
 import { cva, VariantProps } from "class-variance-authority";
+import Link from "next/link";
 
-const buttonStyles = cva("rounded-lg font-medium text-center ", {
+const buttonStyles = cva("rounded-lg text-center ", {
     variants: {
         color: {
             primary: " bg-blue-600 text-white hover:bg-blue-700 border border-blue-500",
@@ -10,6 +11,7 @@ const buttonStyles = cva("rounded-lg font-medium text-center ", {
                 " bg-gray-700 text-white  hover:bg-gray-600 border  border-gray-600 ",
             none: "bg-transparent hover:bg-gray-800 ",
             danger: " bg-red-600 text-white hover:bg-red-700 border-red-500",
+            noneNoHover: "bg-transparent",
         },
         padding: {
             none: "p-0",
@@ -20,11 +22,17 @@ const buttonStyles = cva("rounded-lg font-medium text-center ", {
             true: "w-full",
             false: "w-auto",
         },
+        font: {
+            medium: "font-medium",
+            semiBold: "font-semibold",
+            bold: "font-bold",
+        },
     },
     defaultVariants: {
         color: "none",
         padding: "normal",
         fullWidth: false,
+        font: "medium",
     },
 });
 
@@ -48,6 +56,7 @@ function Button({
     fullWidth,
     onMouseOver,
     className,
+    font,
 }: ButtonProps) {
     // return to ? (
     //         <button onClick={onClick} type={type} onMouseOver={onMouseOver}>
@@ -56,14 +65,39 @@ function Button({
     // ) : (
     // );
     return (
-        <button
-            className={`${buttonStyles({ color, padding, fullWidth })} ${className}`}
-            onClick={onClick}
-            type={type}
-            onMouseOver={onMouseOver}
-        >
-            {children}
-        </button>
+        <>
+            {to ? (
+                <Link href={to}>
+                    <button
+                        className={`${buttonStyles({
+                            color,
+                            padding,
+                            fullWidth,
+                            font,
+                        })} ${className}`}
+                        onClick={onClick}
+                        type={type}
+                        onMouseOver={onMouseOver}
+                    >
+                        {children}
+                    </button>
+                </Link>
+            ) : (
+                <button
+                    className={`${buttonStyles({
+                        color,
+                        padding,
+                        fullWidth,
+                        font,
+                    })} ${className}`}
+                    onClick={onClick}
+                    type={type}
+                    onMouseOver={onMouseOver}
+                >
+                    {children}
+                </button>
+            )}
+        </>
     );
 }
 

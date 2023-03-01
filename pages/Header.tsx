@@ -10,6 +10,7 @@ export default function Header() {
 
     return (
         <div
+            id="home"
             ref={ref}
             className=" w-full pt-20 h-[45rem] bg-gradient-radial from-gray-850 to-gray-900 border-b border-gray-850 rounded-bl-[7rem]"
         >

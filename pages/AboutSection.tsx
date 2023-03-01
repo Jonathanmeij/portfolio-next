@@ -6,12 +6,12 @@ import { useInView } from "react-intersection-observer";
 export default function AboutSection() {
     const { ref, inView } = useInView({
         /* Optional options */
-        threshold: 0.5,
+        threshold: 0.4,
         triggerOnce: true,
     });
 
     return (
-        <div className="">
+        <section id="about">
             <Container className="flex flex-col-reverse items-center justify-center h-full gap-10 m-auto my-28 md:flex-row ">
                 <div className="" ref={ref}>
                     <h2
@@ -59,7 +59,7 @@ export default function AboutSection() {
                 </div>
                 <ImageContainer />
             </Container>
-        </div>
+        </section>
     );
 }
 
