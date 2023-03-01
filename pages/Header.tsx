@@ -1,6 +1,14 @@
 import Button from "@/components/ui/Button";
 import Container from "@/components/ui/Container";
+import { handleScroll } from "@/services/scrollTo";
 import { useInView } from "react-intersection-observer";
+
+if (typeof window !== "undefined") {
+    var contactSection = document.getElementById("contact");
+    var projectsSection = document.getElementById("projects");
+    var aboutSection = document.getElementById("about");
+    var homeSection = document.getElementById("home");
+}
 
 export default function Header() {
     const { ref, inView, entry } = useInView({
@@ -35,8 +43,18 @@ export default function Header() {
                         inView ? "opacity-100" : "opacity-0"
                     }`}
                 >
-                    <Button color="primary">Projects</Button>
-                    <Button color="secondaryLigher">Contact</Button>
+                    <Button
+                        color="primary"
+                        onClick={() => handleScroll(projectsSection, "start")}
+                    >
+                        Projects
+                    </Button>
+                    <Button
+                        color="secondaryLigher"
+                        onClick={() => handleScroll(aboutSection, "start")}
+                    >
+                        Contact
+                    </Button>
                 </div>
             </Container>
         </div>
