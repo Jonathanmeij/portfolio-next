@@ -11,7 +11,7 @@ export default function AboutSection() {
     });
 
     return (
-        <section id="about">
+        <section id="about" className=" scroll-m-32">
             <Container className="flex flex-col-reverse items-center justify-center h-full gap-10 m-auto my-28 md:flex-row ">
                 <div className="" ref={ref}>
                     <h2

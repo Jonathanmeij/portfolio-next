@@ -8,12 +8,7 @@ import { Menu, Transition } from "@headlessui/react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useRouter } from "next/router";
 import Link from "next/link";
-
-const handleScroll = (element: any, block: string) => {
-    if (element) {
-        element.scrollIntoView({ behavior: "smooth", block: block });
-    }
-};
+import { handleScroll } from "@/services/scrollTo";
 
 if (typeof window !== "undefined") {
     var contactSection = document.getElementById("contact");
@@ -48,7 +43,7 @@ export default function Navbar() {
                         <ul className="items-center hidden gap-4 font-medium md:flex">
                             <li>
                                 <Button
-                                    onClick={() => handleScroll(aboutSection, "center")}
+                                    onClick={() => handleScroll(aboutSection, "start")}
                                 >
                                     About
                                 </Button>
@@ -176,16 +171,39 @@ function MenuItems() {
     return (
         <Container className="flex flex-col w-full gap-8 text-2xl rounded-xl">
             <TransitionChild delay={"delay-0"} leaveDelay={"delay-[150ms]"}>
-                <Menu.Item>{({ active }) => <Button fullWidth>About</Button>}</Menu.Item>
+                <Menu.Item>
+                    {({ active }) => (
+                        <Button
+                            onClick={() => handleScroll(aboutSection, "start")}
+                            fullWidth
+                        >
+                            About
+                        </Button>
+                    )}
+                </Menu.Item>
             </TransitionChild>
             <TransitionChild delay={"delay-[50ms]"} leaveDelay={"delay-[100ms]"}>
                 <Menu.Item>
-                    {({ active }) => <Button fullWidth>Projects</Button>}
+                    {({ active }) => (
+                        <Button
+                            onClick={() => handleScroll(projectsSection, "start")}
+                            fullWidth
+                        >
+                            Projects
+                        </Button>
+                    )}
                 </Menu.Item>
             </TransitionChild>
             <TransitionChild delay={"delay-[100ms]"} leaveDelay={"delay-[50ms]"}>
                 <Menu.Item>
-                    {({ active }) => <Button fullWidth>Contact</Button>}
+                    {({ active }) => (
+                        <Button
+                            onClick={() => handleScroll(contactSection, "center")}
+                            fullWidth
+                        >
+                            Contact
+                        </Button>
+                    )}
                 </Menu.Item>
             </TransitionChild>
             <TransitionChild delay={"delay-[150ms]"} leaveDelay={"delay-0"}>
