@@ -1,6 +1,6 @@
 import Button from "@/components/ui/Button";
 import Container from "@/components/ui/Container";
-import { handleScroll } from "@/services/scrollTo";
+import { handleScroll } from "@/lib/scrollTo";
 import { useInView } from "react-intersection-observer";
 
 if (typeof window !== "undefined") {

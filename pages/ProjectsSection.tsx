@@ -3,6 +3,7 @@ import Card from "@/components/ui/Card";
 import Container from "@/components/ui/Container";
 import Divider from "@/components/ui/Divider";
 import Image from "next/image";
+import Link from "next/link";
 import { useInView } from "react-intersection-observer";
 
 const projects = [
@@ -58,28 +59,29 @@ export default function ProjectsSection() {
                 </h2>
                 <div className="grid w-full grid-cols-1 gap-8 md:grid-cols-2">
                     {projects.map((project) => (
-                        <Card
-                            key={project.id}
-                            className="transition duration-200 ease-in-out cursor-pointer hover:scale-[1.04]"
-                            hasAnimation
-                        >
-                            <Image
-                                src={require(`../public/images/${project.image}`)}
-                                alt={project.title}
-                            />
-                            <Divider />
-                            <Box className="">
-                                <h3 className="mb-2 text-lg font-semibold">
-                                    {project.title}
-                                </h3>
-                                <p className="pb-2 font-light tracking-wide text-gray-300 text-md">
-                                    {project.description}
-                                </p>
-                                <a className="text-blue-400 cursor-pointer hover:underline ">
-                                    show more <span>&rarr;</span>
-                                </a>
-                            </Box>
-                        </Card>
+                        <Link href={project.link} key={project.id}>
+                            <Card
+                                className="transition duration-200 ease-in-out cursor-pointer hover:scale-[1.04]"
+                                hasAnimation
+                            >
+                                <Image
+                                    src={require(`../public/images/${project.image}`)}
+                                    alt={project.title}
+                                />
+                                <Divider />
+                                <Box className="">
+                                    <h3 className="mb-2 text-lg font-semibold">
+                                        {project.title}
+                                    </h3>
+                                    <p className="pb-2 font-light tracking-wide text-gray-300 text-md">
+                                        {project.description}
+                                    </p>
+                                    <div className="text-blue-400 cursor-pointer hover:underline ">
+                                        show more <span>&rarr;</span>
+                                    </div>
+                                </Box>
+                            </Card>
+                        </Link>
                     ))}
                 </div>
             </Container>

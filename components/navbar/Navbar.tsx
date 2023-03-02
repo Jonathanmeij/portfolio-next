@@ -8,7 +8,7 @@ import { Menu, Transition } from "@headlessui/react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useRouter } from "next/router";
 import Link from "next/link";
-import { handleScroll } from "@/services/scrollTo";
+import { handleScroll } from "@/lib/scrollTo";
 
 if (typeof window !== "undefined") {
     var contactSection = document.getElementById("contact");
