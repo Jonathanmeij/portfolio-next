@@ -4,7 +4,7 @@ import { getProjectData } from "@/lib/projects/projects";
 import Date from "@/components/ui/Date";
 import Image from "next/image";
 import ImageAuthor from "../../public/images/kite.jpg";
-import Tag from "@/components/ui/tag";
+import Tag from "@/components/ui/Tag";
 import Button from "@/components/ui/Button";
 
 type project = {
@@ -18,8 +18,6 @@ type project = {
 };
 
 export default function ProjectPage({ projectData }: { projectData: project }) {
-    console.log(projectData.contentHtml);
-
     return (
         <div className="min-h-screen pt-20">
             <Container className="pt-10 m-auto">
