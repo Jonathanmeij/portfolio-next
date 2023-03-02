@@ -44,7 +44,11 @@ Here is a description of the features of the application:
 
 -   **Create, edit, and delete:** The application allows users to create customized workouts, add exercises to them, and keep track of sessions. Users can edit or delete any of these elements, providing full controll over all the data of the user.
 
+## Deployment and CI/CD
+
+GitHub was used as the version control system. I added a GitHub Action that automatically deploys the code to an Azure App Service whenever I push code to the main branch. This feature is very useful because it allows for quick changes to be made and deployed to production rapidly.
+
 ## Future enhancements
 
--   **Account page:** A page where the user can see and edit all account data.
--   **Demo mode:** Instead of logging into a account, you can click on a button to acces the application to see how it works.
+-   **Account page:** A page where the user can see and edit account data.
+-   **Demo mode:** Instead of logging into an account, you can click on a button to acces the application to see how it works.
