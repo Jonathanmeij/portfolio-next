@@ -3,18 +3,26 @@ import Container from "@/components/ui/Container";
 import { handleScroll } from "@/lib/scrollTo";
 import { useInView } from "react-intersection-observer";
 
-if (typeof window !== "undefined") {
-    var contactSection = document.getElementById("contact");
-    var projectsSection = document.getElementById("projects");
-    var aboutSection = document.getElementById("about");
-    var homeSection = document.getElementById("home");
-}
-
 export default function Header() {
     const { ref, inView, entry } = useInView({
         threshold: 0,
         triggerOnce: true,
     });
+
+    let contactSection: HTMLElement | null;
+    let projectsSection: HTMLElement | null;
+    let aboutSection: HTMLElement | null;
+    let homeSection: HTMLElement | null;
+
+    if (typeof window !== "undefined") {
+        setTimeout(() => {
+            contactSection = document.getElementById("contact");
+            projectsSection = document.getElementById("projects");
+            aboutSection = document.getElementById("about");
+            homeSection = document.getElementById("home");
+            console.log(contactSection);
+        }, 100);
+    }
 
     return (
         <div
@@ -51,7 +59,7 @@ export default function Header() {
                     </Button>
                     <Button
                         color="secondaryLigher"
-                        onClick={() => handleScroll(aboutSection, "start")}
+                        onClick={() => handleScroll(contactSection, "start")}
                     >
                         Contact
                     </Button>
