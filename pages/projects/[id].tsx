@@ -21,8 +21,11 @@ export default function ProjectPage({ projectData }: { projectData: project }) {
     return (
         <div className="min-h-screen pt-20">
             <Container className="pt-10 m-auto">
-                <ProjectPageHeader projectData={projectData} />
-                <article className="prose prose-lg prose-invert prose-pre:bg-gray-800 ">
+                <article className="w-full m-auto prose prose-lg prose-invert prose-pre:bg-gray-800 ">
+                    <div className=" not-prose">
+                        <ProjectPageHeader projectData={projectData} />
+                    </div>
+
                     <div dangerouslySetInnerHTML={{ __html: projectData.contentHtml }} />
                 </article>
             </Container>

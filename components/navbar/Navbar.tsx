@@ -7,19 +7,27 @@ import Divider from "../ui/Divider";
 import { Menu, Transition } from "@headlessui/react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useRouter } from "next/router";
-import Link from "next/link";
 import { handleScroll } from "@/lib/scrollTo";
-
-if (typeof window !== "undefined") {
-    var contactSection = document.getElementById("contact");
-    var projectsSection = document.getElementById("projects");
-    var aboutSection = document.getElementById("about");
-    var homeSection = document.getElementById("home");
-}
+import React from "react";
 
 export default function Navbar() {
     const router = useRouter();
     const isHome = router.pathname === "/";
+
+    let contactSection: HTMLElement | null;
+    let projectsSection: HTMLElement | null;
+    let aboutSection: HTMLElement | null;
+    let homeSection: HTMLElement | null;
+
+    if (typeof window !== "undefined") {
+        setTimeout(() => {
+            contactSection = document.getElementById("contact");
+            projectsSection = document.getElementById("projects");
+            aboutSection = document.getElementById("about");
+            homeSection = document.getElementById("home");
+            console.log(contactSection);
+        }, 100);
+    }
 
     return (
         <>
@@ -44,6 +52,7 @@ export default function Navbar() {
                             <li>
                                 <Button
                                     onClick={() => handleScroll(aboutSection, "start")}
+                                    to={isHome ? undefined : "/"}
                                 >
                                     About
                                 </Button>
@@ -51,13 +60,15 @@ export default function Navbar() {
                             <li>
                                 <Button
                                     onClick={() => handleScroll(projectsSection, "start")}
+                                    to={isHome ? undefined : "/"}
                                 >
                                     Projects
                                 </Button>
                             </li>
                             <li>
                                 <Button
-                                    onClick={() => handleScroll(contactSection, "center")}
+                                    onClick={() => handleScroll(contactSection, "start")}
+                                    to={isHome ? undefined : "/"}
                                     color="secondary"
                                 >
                                     Contact
@@ -168,6 +179,24 @@ function MobileMenuButton() {
 }
 
 function MenuItems() {
+    const router = useRouter();
+    const isHome = router.pathname === "/";
+
+    let contactSection: HTMLElement | null;
+    let projectsSection: HTMLElement | null;
+    let aboutSection: HTMLElement | null;
+    let homeSection: HTMLElement | null;
+
+    if (typeof window !== "undefined") {
+        setTimeout(() => {
+            contactSection = document.getElementById("contact");
+            projectsSection = document.getElementById("projects");
+            aboutSection = document.getElementById("about");
+            homeSection = document.getElementById("home");
+            console.log(contactSection);
+        }, 100);
+    }
+
     return (
         <Container className="flex flex-col w-full gap-8 text-2xl rounded-xl">
             <TransitionChild delay={"delay-0"} leaveDelay={"delay-[150ms]"}>
@@ -175,6 +204,7 @@ function MenuItems() {
                     {({ active }) => (
                         <Button
                             onClick={() => handleScroll(aboutSection, "start")}
+                            to={isHome ? undefined : "/"}
                             fullWidth
                         >
                             About
@@ -187,6 +217,7 @@ function MenuItems() {
                     {({ active }) => (
                         <Button
                             onClick={() => handleScroll(projectsSection, "start")}
+                            to={isHome ? undefined : "/"}
                             fullWidth
                         >
                             Projects
@@ -199,6 +230,7 @@ function MenuItems() {
                     {({ active }) => (
                         <Button
                             onClick={() => handleScroll(contactSection, "center")}
+                            to={isHome ? undefined : "/"}
                             fullWidth
                         >
                             Contact

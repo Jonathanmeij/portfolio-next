@@ -58,12 +58,6 @@ function Button({
     className,
     font,
 }: ButtonProps) {
-    // return to ? (
-    //         <button onClick={onClick} type={type} onMouseOver={onMouseOver}>
-    //             {children}
-    //         </button>
-    // ) : (
-    // );
     return (
         <>
             {to ? (
