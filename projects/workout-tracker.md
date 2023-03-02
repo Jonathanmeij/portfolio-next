@@ -6,7 +6,7 @@ url: "https://workouttrack.azurewebsites.net/"
 github: "https://github.com/Jonathanmeij/Workout-Tracker"
 ---
 
-![Workout-tracker](/images/workout-tracker-1.jpg)
+![Pictures of app screens](/images/workout-tracker-1.jpg)
 
 ## About the projects
 
@@ -33,6 +33,8 @@ Tailwind is an in-HTML CSS solution that allows you to write CSS in the class of
 React is a component-oriented framework that enables you to reuse pieces of frontend code. In previous projects, I didn't pay much attention to reusing components, resulting in a lot of duplicate code. In this project, I created a small component library for standard elements such as buttons, cards, and pop-ups, resulting in less code.
 
 ## Features
+
+![Pictures of features](/images/workout-tracker-2.jpg)
 
 Here is a description of the features of the application:
 
