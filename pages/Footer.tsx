@@ -1,8 +1,27 @@
 import Button from "@/components/ui/Button";
 import Container from "@/components/ui/Container";
 import Divider from "@/components/ui/Divider";
+import { handleScroll } from "@/lib/scrollTo";
+import { useRouter } from "next/router";
 
 export default function Footer() {
+    const router = useRouter();
+    const isHome = router.pathname === "/";
+
+    let contactSection: HTMLElement | null;
+    let projectsSection: HTMLElement | null;
+    let aboutSection: HTMLElement | null;
+    let homeSection: HTMLElement | null;
+
+    if (typeof window !== "undefined") {
+        setTimeout(() => {
+            contactSection = document.getElementById("contact");
+            projectsSection = document.getElementById("projects");
+            aboutSection = document.getElementById("about");
+            homeSection = document.getElementById("home");
+        }, 100);
+    }
+
     return (
         <>
             <Divider />
@@ -15,13 +34,36 @@ export default function Footer() {
                     <h1 className="text-2xl font-bold">Jonathan</h1>
                     <ul className="flex flex-col items-center gap-4 font-medium md:flex-row">
                         <li>
-                            <Button>Home</Button>
+                            <Button
+                                onClick={() => handleScroll(homeSection, "start")}
+                                to={isHome ? undefined : "/"}
+                            >
+                                Home
+                            </Button>
                         </li>
                         <li>
-                            <Button>Projects</Button>
+                            <Button
+                                onClick={() => handleScroll(aboutSection, "start")}
+                                to={isHome ? undefined : "/"}
+                            >
+                                About
+                            </Button>
                         </li>
                         <li>
-                            <Button>Contact</Button>
+                            <Button
+                                onClick={() => handleScroll(projectsSection, "start")}
+                                to={isHome ? undefined : "/"}
+                            >
+                                Projects
+                            </Button>
+                        </li>
+                        <li>
+                            <Button
+                                onClick={() => handleScroll(contactSection, "start")}
+                                to={isHome ? undefined : "/"}
+                            >
+                                Contact
+                            </Button>
                         </li>
                         {/* <li>
                         <a target="_blank" href="https://github.com/Jonathanmeij">
