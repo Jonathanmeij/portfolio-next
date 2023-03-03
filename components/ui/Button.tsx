@@ -69,7 +69,6 @@ function Button({
                             fullWidth,
                             font,
                         })} ${className}`}
-                        onClick={onClick}
                         type={type}
                         onMouseOver={onMouseOver}
                     >

@@ -25,7 +25,6 @@ export default function Navbar() {
             projectsSection = document.getElementById("projects");
             aboutSection = document.getElementById("about");
             homeSection = document.getElementById("home");
-            console.log(contactSection);
         }, 100);
     }
 
@@ -193,7 +192,6 @@ function MenuItems() {
             projectsSection = document.getElementById("projects");
             aboutSection = document.getElementById("about");
             homeSection = document.getElementById("home");
-            console.log(contactSection);
         }, 100);
     }
 
