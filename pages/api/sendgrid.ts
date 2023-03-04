@@ -1,0 +1,39 @@
+import sendgrid from "@sendgrid/mail";
+import type { NextApiRequest, NextApiResponse } from "next";
+
+if (!process.env.SENDGRID_API_KEY) {
+    throw new Error("Missing SENDGRID_API_KEY env var");
+}
+
+if (!process.env.EMAIL) {
+    throw new Error("Missing EMAIL env var");
+}
+
+sendgrid.setApiKey(process.env.SENDGRID_API_KEY);
+const email = process.env.EMAIL;
+
+export default async function sendEmail(req: any, res: any) {
+    if (req.method !== "POST") {
+        res.status(405).json({ message: "Method not allowed" });
+        return;
+    }
+
+    if (!req.body.message) {
+        res.status(400).json({ message: "Missing message" });
+        return;
+    }
+
+    try {
+        await sendgrid.send({
+            to: email,
+            from: "portfoliojonathanmeij@gmail.com",
+            subject: "Portfolio contact form",
+            html: req.body.message,
+        });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: "Error sending email" });
+    }
+
+    res.status(200).json({ message: "Email sent" });
+}
