@@ -20,7 +20,6 @@ export default function Header() {
             projectsSection = document.getElementById("projects");
             aboutSection = document.getElementById("about");
             homeSection = document.getElementById("home");
-            console.log(contactSection);
         }, 100);
     }
 
