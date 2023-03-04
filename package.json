@@ -11,6 +11,7 @@
   "dependencies": {
     "@headlessui/react": "^1.7.12",
     "@headlessui/tailwindcss": "^0.1.2",
+    "@sendgrid/mail": "^7.7.0",
     "@types/node": "18.14.1",
     "@types/react": "18.0.28",
     "@types/react-dom": "18.0.11",
@@ -23,6 +24,7 @@
     "next": "13.2.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-hook-form": "^7.43.4",
     "react-intersection-observer": "^9.4.3",
     "remark": "^14.0.2",
     "remark-html": "^15.0.2",
