@@ -51,9 +51,12 @@ export default function Contact() {
                 </div>
                 {success && (
                     <div className="p-4 bg-green-500 rounded-lg">
-                        <p className="font-semibold text-white">
-                            Message sent successfully!
-                        </p>
+                        <p className="text-white ">Message sent successfully!</p>
+                    </div>
+                )}
+                {error && (
+                    <div className="p-4 bg-red-500 rounded-lg">
+                        <p className="text-white ">Something went wrong!</p>
                     </div>
                 )}
                 <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4">
