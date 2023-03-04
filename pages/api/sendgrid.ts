@@ -23,12 +23,29 @@ export default async function sendEmail(req: any, res: any) {
         return;
     }
 
+    if (!req.body.email) {
+        res.status(400).json({ message: "Missing email" });
+        return;
+    }
+
+    if (!req.body.name) {
+        res.status(400).json({ message: "Missing name" });
+        return;
+    }
+
+    const message = `
+        <h1>Portfolio contact form</h1>
+        <p>From:<br/> ${req.body.name}</p>
+        <p>Email:<br/> ${req.body.email}</p>
+        <p>Message:<br/> ${req.body.message}</p>
+    `;
+
     try {
         await sendgrid.send({
             to: email,
             from: "portfoliojonathanmeij@gmail.com",
             subject: "Portfolio contact form",
-            html: req.body.message,
+            html: message,
         });
     } catch (error) {
         console.error(error);
