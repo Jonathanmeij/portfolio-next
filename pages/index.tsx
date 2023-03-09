@@ -10,8 +10,11 @@ export default function Home() {
     return (
         <>
             <Head>
-                <title>Jonathan</title>
-                <meta name="description" content="Jonathan van der Meij portfolio" />
+                <title>Jonathan van der Meij - Webdeveloper</title>
+                <meta
+                    name="description"
+                    content="Jonathan van der Meij webdeveloper portfolio"
+                />
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>

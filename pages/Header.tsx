@@ -38,11 +38,11 @@ export default function Header() {
                     <span className="text-2xl tracking-wide text-blue-500">
                         Hey, I am
                     </span>
-                    <span className="text-4xl font-bold tracking-wide md:text-5xl">
-                        {"< Jonathan />"}
+                    <span className="text-5xl font-bold tracking-wide md:text-6xl">
+                        {"Jonathan"}
                     </span>
-                    <span className="text-2xl font-semibold tracking-wide md:text-4xl">
-                        {"{ Web Developer }"}
+                    <span className="text-2xl font-semibold tracking-wide md:text-3xl">
+                        {"Web Developer"}
                     </span>
                 </h1>
                 <div
