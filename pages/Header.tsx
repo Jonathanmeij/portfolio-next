@@ -41,7 +41,7 @@ export default function Header() {
                     <span className="text-5xl font-bold tracking-wide md:text-6xl">
                         {"Jonathan"}
                     </span>
-                    <span className="text-2xl font-semibold tracking-wide md:text-3xl">
+                    <span className="text-2xl font-medium tracking-wide md:text-3xl">
                         {"Web Developer"}
                     </span>
                 </h1>

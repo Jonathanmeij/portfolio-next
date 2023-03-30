@@ -16,10 +16,10 @@ const projects = [
     },
     {
         id: 2,
-        title: "Coming soon",
-        description: "Lorum ipsum dolor sit amet. Lorum ipsum dolor sit amet.",
-        image: "coming-soon.jpg",
-        link: "/projects/coming-soon",
+        title: "SmartTest",
+        description: "A test application for students to take and create tests.",
+        image: "smart-test-thumbnail.jpg",
+        link: "/projects/smart-test",
     },
     {
         id: 3,
