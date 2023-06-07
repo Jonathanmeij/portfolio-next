@@ -9,19 +9,7 @@ export default function Header() {
         triggerOnce: true,
     });
 
-    let contactSection: HTMLElement | null;
-    let projectsSection: HTMLElement | null;
-    let aboutSection: HTMLElement | null;
-    let homeSection: HTMLElement | null;
 
-    if (typeof window !== "undefined") {
-        setTimeout(() => {
-            contactSection = document.getElementById("contact");
-            projectsSection = document.getElementById("projects");
-            aboutSection = document.getElementById("about");
-            homeSection = document.getElementById("home");
-        }, 100);
-    }
 
     return (
         <div

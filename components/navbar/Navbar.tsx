@@ -51,7 +51,7 @@ export default function Navbar() {
                             <li>
                                 <Button
                                     onClick={() => handleScroll(aboutSection, "start")}
-                                    to={isHome ? undefined : "/"}
+                                    to={isHome ? undefined : "/?location=about"}
                                 >
                                     About
                                 </Button>
@@ -59,7 +59,7 @@ export default function Navbar() {
                             <li>
                                 <Button
                                     onClick={() => handleScroll(projectsSection, "start")}
-                                    to={isHome ? undefined : "/"}
+                                    to={isHome ? undefined : "/?location=projects"}
                                 >
                                     Projects
                                 </Button>
@@ -67,7 +67,7 @@ export default function Navbar() {
                             <li>
                                 <Button
                                     onClick={() => handleScroll(contactSection, "start")}
-                                    to={isHome ? undefined : "/"}
+                                    to={isHome ? undefined : "/?location=contact"}
                                     color="secondary"
                                 >
                                     Contact
@@ -202,7 +202,7 @@ function MenuItems() {
                     {({ active }) => (
                         <Button
                             onClick={() => handleScroll(aboutSection, "start")}
-                            to={isHome ? undefined : "/"}
+                            to={isHome ? undefined : "/?location=about"}
                             fullWidth
                         >
                             About
@@ -215,7 +215,7 @@ function MenuItems() {
                     {({ active }) => (
                         <Button
                             onClick={() => handleScroll(projectsSection, "start")}
-                            to={isHome ? undefined : "/"}
+                            to={isHome ? undefined : "/?location=projects"}
                             fullWidth
                         >
                             Projects
@@ -228,7 +228,7 @@ function MenuItems() {
                     {({ active }) => (
                         <Button
                             onClick={() => handleScroll(contactSection, "center")}
-                            to={isHome ? undefined : "/"}
+                            to={isHome ? undefined : "/?location=contact"}
                             fullWidth
                         >
                             Contact

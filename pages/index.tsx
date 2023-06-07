@@ -5,8 +5,20 @@ import Header from "./Header";
 import AboutSection from "./AboutSection";
 import ProjectsSection from "./ProjectsSection";
 import Contact from "./Contact";
+import {useRouter} from "next/router";
+import {handleScroll} from "@/lib/scrollTo";
 
 export default function Home() {
+    const router = useRouter();
+    const location = router.query.location;
+
+    setTimeout(() => {
+        if(location !== undefined) {
+            const element = document.getElementById(location as string);
+            handleScroll(element, "start")
+        }
+    }, 100);
+
     return (
         <>
             <Head>
