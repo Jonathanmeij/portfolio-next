@@ -19,7 +19,7 @@ type project = {
 
 export default function ProjectPage({ projectData }: { projectData: project }) {
     return (
-        <div className="min-h-screen pt-20">
+        <div className="min-h-screen pt-16">
             <Container className="pt-10 m-auto">
                 <article className="w-full m-auto prose prose-lg prose-invert prose-pre:bg-gray-800 ">
                     <div className=" not-prose">
