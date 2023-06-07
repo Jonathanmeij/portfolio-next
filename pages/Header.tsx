@@ -27,7 +27,7 @@ export default function Header() {
         <div
             id="home"
             ref={ref}
-            className=" w-full pt-20 h-[45rem] bg-gradient-radial from-gray-850 to-gray-900 border-b border-gray-850 rounded-bl-[7rem]"
+            className=" w-full pt-16 h-[45rem] bg-gradient-radial from-gray-850 to-gray-900 border-b border-gray-850 rounded-bl-[7rem]"
         >
             <Container className="flex flex-col items-center justify-center w-full h-full gap-8 m-auto">
                 <h1
@@ -35,14 +35,13 @@ export default function Header() {
                         inView ? "opacity-100" : "opacity-0"
                     }`}
                 >
-                    <span className="text-2xl tracking-wide text-blue-500">
-                        Hey, I am
+                    <span className="text-2xl tracking-wide text-blue-400">
+                        Hey, I am Jonathan
                     </span>
                     <span className="text-5xl font-bold tracking-wide md:text-6xl">
-                        {"Jonathan"}
+                        Web Developer
                     </span>
                     <span className="text-2xl font-medium tracking-wide md:text-3xl">
-                        {"Web Developer"}
                     </span>
                 </h1>
                 <div
@@ -50,18 +49,18 @@ export default function Header() {
                         inView ? "opacity-100" : "opacity-0"
                     }`}
                 >
-                    <Button
-                        color="primary"
-                        onClick={() => handleScroll(projectsSection, "start")}
-                    >
-                        Projects
-                    </Button>
-                    <Button
-                        color="secondaryLigher"
-                        onClick={() => handleScroll(contactSection, "start")}
-                    >
-                        Contact
-                    </Button>
+                    {/*<Button*/}
+                    {/*    color="primary"*/}
+                    {/*    onClick={() => handleScroll(projectsSection, "start")}*/}
+                    {/*>*/}
+                    {/*    Projects*/}
+                    {/*</Button>*/}
+                    {/*<Button*/}
+                    {/*    color="secondaryLigher"*/}
+                    {/*    onClick={() => handleScroll(contactSection, "start")}*/}
+                    {/*>*/}
+                    {/*    Contact*/}
+                    {/*</Button>*/}
                 </div>
             </Container>
         </div>
