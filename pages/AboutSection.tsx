@@ -33,8 +33,8 @@ export default function AboutSection() {
                         <p className="max-w-xl mt-4 font-light tracking-wide text-gray-300 text-md">
                             <span className="flex flex-col gap-2">
                                 <span>
-                                    My name is Jonathan, an 18-year-old web developer from
-                                    the Netherlands. I&apos;m currently in my second year
+                                    My name is Jonathan, an 20-year-old web developer from
+                                    the Netherlands. I&apos;m currently in my fourth year
                                     of studies at{" "}
                                     <L>The Hague University of Applied Sciences</L>
                                 </span>
